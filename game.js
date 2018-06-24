@@ -1,0 +1,79 @@
+ 
+        var wordBank = ["iron man", "captain america", "hawkeye", "the hulk", "thor", "black widow", "spiderman", "doctor strange", "black panther", "vision", "scarlet witch", "war machine", "falcon", "ant man", "captain marvel", "guardians of the galaxy", "nick fury"];
+        var correctAndBlanks = "";
+        var wrongLetters = [];
+        var score = 0;
+        var livesRemaining = 6;
+        var randomWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
+        console.log(randomWord);
+
+        function beginGame() {
+
+
+            for (var i = 0; i < randomWord.length; i++) {
+                if (randomWord[i] === " ") {
+                    correctAndBlanks += (" ");
+                }
+                else {
+                    correctAndBlanks += ("_");
+                }
+            }
+
+        }
+
+        beginGame();
+        document.querySelector("#lives").innerHTML = livesRemaining;
+        document.querySelector("#scoreboard").innerHTML = score;
+        document.querySelector("#wordLine").innerHTML = correctAndBlanks
+        console.log(correctAndBlanks);
+
+        String.prototype.replaceAt = function (index, replacement) {
+            return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+        }
+
+        document.onkeyup = function (event) {
+            var userPick = event.key.toUpperCase();
+
+
+            for (var j = 0; j < randomWord.length; j++) {
+                if (randomWord.indexOf(userPick, j) == j) {
+                    correctAndBlanks = correctAndBlanks.replaceAt(j, userPick);
+                    document.querySelector("#wordLine").innerHTML = correctAndBlanks;
+
+
+
+                }
+            }
+
+
+            if (randomWord.indexOf(userPick) == -1 && wrongLetters.indexOf(userPick) == -1) {
+                wrongLetters.push(userPick);
+                document.querySelector("#wrongGuesses").innerHTML = wrongLetters
+                livesRemaining--;
+                document.querySelector("#lives").innerHTML = livesRemaining;
+
+
+            }
+
+            if (correctAndBlanks == randomWord) {
+                score++;
+                document.querySelector("#scoreboard").innerHTML = score;
+                randomWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
+                correctAndBlanks = ("");
+                wrongLetters = [];
+                document.querySelector("#wrongGuesses").innerHTML = wrongLetters
+                livesRemaining = 6;
+                document.querySelector("#lives").innerHTML = livesRemaining;
+                beginGame();
+                document.querySelector("#wordLine").innerHTML = correctAndBlanks;
+
+
+
+            }
+
+
+
+        }
+
+
+   
