@@ -7,37 +7,75 @@
     <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel = "stylesheet" type = "text/css" href = "style.css" />
-    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+
 
 
 </head>
 
 <body>
-
+    <video autoplay muted loop id="myVideo">
+        <source src="avengers.mp4" type="video/mp4">
+    </video>
 
     <div class="container">
-        <h1 id="wordLine"></h1>
-    </div>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10 middle">
+                <center>
+                    <img src="logo.png" alt="Avengers Logo" id="avLogo">
+                </center>
+                <div>
+                    <center>
+                        <h3 id="assemble">Call and assemble the Avengers before Thanos arrives!</h3>
+                    </center>
+                    <div>
+                        <center>
+                            <img src="thanos.png" style="width:20px" id="thanos">
+                        </center>
 
-    <div>
-        <h1>Incorrect Letters</h1>
-        <h2 id="wrongGuesses"></h2>
-    </div>
+                    </div>
+                </div>
+                <div>
+                    <center>
+                        <h1 id="wordLine"></h1>
+                    </center>
+                </div>
 
-    <div>
-        <h1>Heroes Recruited:
-            <span id="scoreboard"></span>
-        </h1>
-    </div>
+                <div>
+                    <center>
+                        <h1 id="wc">Wrong Letters:</h1>
+                        <h2 id="wrongGuesses"></h2>
+                    </center>
+                </div>
 
-    <div>
-        <h1>Thanos's ETA:
-            <span id="lives"></span> hours</h1>
-    </div>
+                <div>
+                    <center>
+                        <h1 id="hc">Heroes Recruited:
+                            <span id="scoreboard"></span>
+                    </center>
+                    </h1>
+                </div>
 
-    <div>
-        <button type="button" onClick="refreshPage()">Play Again</button>
+                <div>
+                    <center>
+                        <h1 id="eta">Thanos's ETA:
+                            <span id="lives"></span> hours</h1>
+                    </center>
+                </div>
+
+                <div>
+                    <center>
+                        <button type="button" onClick="refreshPage()" id="button1">Play Again</button>
+                    </center>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+
     </div>
 
 
@@ -129,7 +167,7 @@
     </script>
  -->
 
- <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="game.js"></script>
 
 
 </body>
