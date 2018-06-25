@@ -35,10 +35,15 @@ console.log(correctAndBlanks);
 String.prototype.replaceAt = function (index, replacement) {
     return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
+// function isLetter(str) {
+//     return str.length === 1 && str.match(/[a-z]/i);
+// }
+
+
 
 document.onkeyup = function (event) {
     var userPick = event.key.toUpperCase();
-
+    
 
     for (var j = 0; j < randomWord.length; j++) {
         if (randomWord.indexOf(userPick, j) == j) {
@@ -49,7 +54,7 @@ document.onkeyup = function (event) {
 
         }
     }
-
+    
 
     if (randomWord.indexOf(userPick) == -1 && wrongLetters.indexOf(userPick) == -1) {
         wrongLetters.push(userPick);
@@ -114,8 +119,8 @@ document.onkeyup = function (event) {
     
     
     } 
-
-
+    
+   
 
    
 
