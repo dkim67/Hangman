@@ -6,7 +6,8 @@ var score = 0;
 var livesRemaining = 6;
 var randomWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
 console.log(randomWord);
-var thanosPic = document.getElementById("thanos")
+var thanosPic = document.getElementById("thanos");
+var gg = document.getElementById("gg");
 
 function beginGame() {
 
@@ -103,8 +104,11 @@ document.onkeyup = function (event) {
     }
 
     if (livesRemaining === 0) {
-        alert('"SNAP!"');
-        alert('Nick Fury: "Send a SOS out to Captain Marvel ASAP!!!!"')
+        // alert('"SNAP!"');
+        // alert('Nick Fury: "Send a SOS out to Captain Marvel ASAP!!!!"')
+        thanos.setAttribute("style", "width:0px");
+        gg.setAttribute("style", "width:300px");
+
 
     }
     
