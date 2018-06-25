@@ -107,7 +107,7 @@ document.onkeyup = function (event) {
         // alert('"SNAP!"');
         // alert('Nick Fury: "Send a SOS out to Captain Marvel ASAP!!!!"')
         thanos.setAttribute("style", "width:0px");
-        gg.setAttribute("style", "width:300px");
+        gg.setAttribute("style", "width:600px");
 
 
     }
