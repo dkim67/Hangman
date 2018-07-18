@@ -94,6 +94,7 @@ document.onkeyup = function (event) {
 
     if (correctAndBlanks == randomWord) {
         score++;
+        
         document.querySelector("#scoreboard").innerHTML = score;
         randomWord = wordBank[Math.floor(Math.random() * wordBank.length)].toUpperCase();
         correctAndBlanks = ("");
